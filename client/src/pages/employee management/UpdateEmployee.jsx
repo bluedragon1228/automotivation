@@ -119,7 +119,7 @@ const UpdateEmployee = () => {
           showCancelButton: false,
           timer:4000,
         })
-        navigate('/Employee/dashboard');
+        navigate('/employee-management/');
         return;
       })
       .catch((error) => {
