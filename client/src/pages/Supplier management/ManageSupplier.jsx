@@ -115,6 +115,7 @@ const ManageSupplier = () => {
                   <td className="py-2 px-4">{supplier.ItemName}</td>
                   <td className="py-2 px-4">{supplier.ContactNo}</td>
                   <td className="py-2 px-4">{supplier.Email}</td>
+                  <td className="py-2 px-4">{supplier.age}</td>
                   <td className="py-2 px-4">{supplier.Address}</td>
                   <td className="py-2 px-4">
                     <div className="flex items-center">
