@@ -154,7 +154,7 @@ const ShowAllPackages = () => {
             <tr>
               <th className="py-3 px-5 text-left">Pkg Name</th>
               <th className="py-3 px-5 text-left">Price</th>
-              <th className="py-3 px-5 text-left">Services</th>
+              <th className="py-3 px-5 text-left">Services</th> {/*add field*/}
               <th className="py-3 px-5 text-left">Action</th>
             </tr>
           </thead>
@@ -167,7 +167,7 @@ const ShowAllPackages = () => {
                 <td className="py-3 px-5 text-ExtraDarkColor">
                   {item.pkgName}
                 </td>
-                <td className="py-3 px-5 text-ExtraDarkColor">
+                <td className="py-3 px-5 text-ExtraDarkColor">{/*add field*/}
                   {item.pkgPrice}
                 </td>
                 <td className="py-3 px-5 text-ExtraDarkColor">

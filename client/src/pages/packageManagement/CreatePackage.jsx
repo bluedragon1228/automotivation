@@ -8,7 +8,7 @@ const CreatePackage = () => {
   const [pkgID, setPkgId] = useState("");
   const [pkgName, setPkgName] = useState("");
   const [pkgDes, setPkgDes] = useState("");
-  const [pkgPrice, setPkgPrice] = useState("");
+  const [pkgPrice, setPkgPrice] = useState("");//add field 
   const [pkgImg, setPkgImg] = useState(null);
   const [pkgServ, setPkgServ] = useState([
     {
@@ -123,7 +123,7 @@ const CreatePackage = () => {
 
       await axios.post("http://localhost:3000/api/maintance/add", {
         pkgID,
-        pkgName,
+        pkgName,  //add field
         pkgDes,
         pkgPrice,
         imageURL: imageUrl,
@@ -171,7 +171,7 @@ const CreatePackage = () => {
               className="w-full p-2 border rounded"
               value={pkgName}
               onChange={(e) => {
-                const p = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+                const p = e.target.value.replace(/[^a-zA-Z\s]/g, ""); {/*add field */}
                 setPkgName(p);
               }}
               required
