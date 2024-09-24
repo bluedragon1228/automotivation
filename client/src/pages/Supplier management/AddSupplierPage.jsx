@@ -13,6 +13,7 @@ const AddSupplierPage = () => {
   const [address, setAddress] = useState("");
   const [items, setItems] = useState([]); // State for storing items
   const [loading, setLoading] = useState(false);
+  const [age, setAge] = useState("");//new test
 
   useEffect(() => {
     fetchParts();
@@ -67,6 +68,7 @@ const AddSupplierPage = () => {
         ContactNo: contactNo,
         Email: email,
         Address: address,
+        age: age,
       });
 
       Swal.fire({
@@ -82,6 +84,8 @@ const AddSupplierPage = () => {
       setContactNo("");
       setEmail("");
       setAddress("");
+
+      setAge("");//test
     } catch (error) {
       Swal.fire({
         title: "Error!",
@@ -159,6 +163,21 @@ const AddSupplierPage = () => {
               required
             />
           </div>
+            
+          <div className="mb-4">
+            <label className="text-dark block mb-2">Contact Number</label>
+            <input
+              type="number"
+              className="w-full p-2 border border-dark rounded"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              maxLength={3} // Set max length to 10 digits
+              required
+            />
+
+          </div>
+
+
           <div className="mb-4">
             <label className="text-dark block mb-2">Address</label>
             <textarea
