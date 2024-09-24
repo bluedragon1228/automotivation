@@ -104,20 +104,20 @@ const AddSupplierPage = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
           <label className="text-dark block mb-2">Supplier Name</label>
-  <input
-    type="text"
-    className="w-full p-2 border border-dark rounded"
-    value={supplierName}
-    onChange={(e) => {
-      const value = e.target.value;
-      // Allow only letters (A-Z, a-z)
-      const regex = /^[A-Za-z]*$/;
-      if (regex.test(value)) {
-        setSupplierName(value);
-      }
-    }}
-    required
-  />
+          <input
+      type="text"
+      className="w-full p-2 border border-dark rounded"
+      value={supplierName}
+      onChange={(e) => {
+        const value = e.target.value;
+        // Allow only letters and spaces (A-Z, a-z, and space)
+        const regex = /^[A-Za-z\s]*$/;
+        if (regex.test(value)) {
+          setSupplierName(value);
+        }
+      }}
+      required
+    />
           </div>
           <div className="mb-4">
             <label className="text-dark block mb-2">Item Name</label>
