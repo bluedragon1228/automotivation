@@ -176,9 +176,12 @@ const UpdatePackage = () => {
             <label className="text-dark block mb-2">Package Name</label>
             <input
               type="text"
-              className="w-full p-2 border border-dark rounded"
+              className="w-full p-2 border rounded"
               value={pkgName}
-              onChange={(e) => setPkgName(e.target.value)}
+              onChange={(e) => {
+                const p = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+                setPkgName(p);
+              }}
               required
             />
             {formErrors.pkgName && (
@@ -199,9 +202,16 @@ const UpdatePackage = () => {
               <label className="text-dark block mb-2">Price</label>
               <input
                 type="number"
-                className="w-full p-2 border border-dark rounded"
+                className="w-full p-2 border rounded"
                 value={pkgPrice}
-                onChange={(e) => setPkgPrice(e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only update if the value is a positive number
+                  if (!isNaN(value) && Number(value) >= 0) {
+                    setPkgPrice(value);
+                  }
+                }}
+                min="0" // Prevents negative numbers
                 required
               />
               {formErrors.pkgPrice && (
@@ -215,26 +225,37 @@ const UpdatePackage = () => {
           <div className="mb-4">
             <label className="text-dark block mb-2">Services</label>
             {pkgServ.map((pkg, index) => (
-              <div>
-                <div key={pkg.id} className="mb-2 flex items-center">
+              <div key={pkg.id}>
+                <div className="mb-2 flex items-center">
+                  {/* Service ID Input (Numbers Only) */}
                   <input
                     type="text"
                     className="w-1/2 p-2 border border-dark rounded"
                     placeholder="Service Id"
                     value={pkg.key}
-                    onChange={(e) =>
-                      handleServiceChange(pkg.id, "key", e.target.value)
-                    }
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (/^\d*$/.test(value)) {
+                        handleServiceChange(pkg.id, "key", value); // Only update if the value is a number
+                      }
+                    }}
                   />
+
+                  {/* Service Name Input (Letters and Spaces Only) */}
                   <input
                     type="text"
                     className="w-1/2 p-2 border border-dark rounded ml-2"
                     placeholder="Service Name"
                     value={pkg.name}
-                    onChange={(e) =>
-                      handleServiceChange(pkg.id, "name", e.target.value)
-                    }
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (/^[A-Za-z\s]*$/.test(value)) {
+                        handleServiceChange(pkg.id, "name", value); // Only update if the value contains letters and spaces
+                      }
+                    }}
                   />
+
+                  {/* Remove Button */}
                   <button
                     type="button"
                     className="ml-2 text-red-500"
@@ -243,6 +264,8 @@ const UpdatePackage = () => {
                     Remove
                   </button>
                 </div>
+
+                {/* Service Name Error Handling */}
                 {formErrors[`serviceName${index}`] && (
                   <span className="text-red-500 text-sm">
                     {formErrors[`serviceName${index}`]}
@@ -250,6 +273,8 @@ const UpdatePackage = () => {
                 )}
               </div>
             ))}
+
+            {/* Add Service Button */}
             <button
               type="button"
               className="text-blue-500"
