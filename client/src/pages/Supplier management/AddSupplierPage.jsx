@@ -163,7 +163,7 @@ const AddSupplierPage = () => {
               required
             />
           </div>
-            
+          
           <div className="mb-4">
             <label className="text-dark block mb-2">Age</label>
             <input
