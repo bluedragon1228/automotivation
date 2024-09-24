@@ -165,7 +165,7 @@ const AddSupplierPage = () => {
           </div>
             
           <div className="mb-4">
-            <label className="text-dark block mb-2">Contact Number</label>
+            <label className="text-dark block mb-2">Age</label>
             <input
               type="number"
               className="w-full p-2 border border-dark rounded"
