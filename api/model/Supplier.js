@@ -30,10 +30,7 @@ const supplierSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        age:{
-            type:Number,
-
-        },
+        
         status: {
             type: String,
             enum: ['pending', 'approved', 'declined'],

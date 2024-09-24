@@ -13,7 +13,7 @@ const AddSupplierPage = () => {
   const [address, setAddress] = useState("");
   const [items, setItems] = useState([]); // State for storing items
   const [loading, setLoading] = useState(false);
-  const [age, setAge] = useState("");//new test
+ // const [age, setAge] = useState("");
 
   useEffect(() => {
     fetchParts();
@@ -68,7 +68,7 @@ const AddSupplierPage = () => {
         ContactNo: contactNo,
         Email: email,
         Address: address,
-        age: age,
+        //age: age,
       });
 
       Swal.fire({
@@ -84,8 +84,8 @@ const AddSupplierPage = () => {
       setContactNo("");
       setEmail("");
       setAddress("");
+      //setAge("");
 
-      setAge("");//test
     } catch (error) {
       Swal.fire({
         title: "Error!",
@@ -164,7 +164,7 @@ const AddSupplierPage = () => {
             />
           </div>
           
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="text-dark block mb-2">Age</label>
             <input
               type="number"
@@ -175,7 +175,7 @@ const AddSupplierPage = () => {
               required
             />
 
-          </div>
+          </div> */}
 
 
           <div className="mb-4">
