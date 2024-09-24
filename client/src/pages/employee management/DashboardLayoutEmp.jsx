@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaBars } from "react-icons/fa";
+import { Route, Routes } from "react-router-dom";
+import EmployeeDashboard from "./EmployeeDashboard";
+import Sidebar from "./Sidebar";
+
+function DashboardLayoutEmp() {
+  const [isOpen, setIsOpen] = useState(true);  // Corrected
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+
+  const contentVariants = {
+    open: { marginLeft: "250px" }, // Example of how it changes when open
+    closed: { marginLeft: "0px" }, // Example of how it changes when closed
+  };
+
+  return (
+    <div className="relative min-h-screen bg-PrimaryColor">
+      {/* Toggle Button */}
+      <button
+        className="fixed top-4 left-4 z-50 bg-ExtraDarkColor text-SecondaryColor p-2 rounded-full shadow-md"
+        onClick={toggleSidebar}
+      >
+        <FaBars size={20} />
+      </button>
+
+      {/* Sidebar Component */}
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+
+      {/* Main Content */}
+      <motion.main
+        className="flex-1 ml-0 transition-all"
+        variants={contentVariants}
+        animate={isOpen ? "open" : "closed"}
+      >
+        {/* Routes for Dashboard Components */}
+        <Routes>
+          <Route path="/" element={<EmployeeDashboard />} />
+        </Routes>
+      </motion.main>
+    </div>
+  );
+}
+
+export default DashboardLayoutEmp;

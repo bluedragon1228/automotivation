@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+// import moduleName from ''
+import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,6 +53,21 @@ const Login = () => {
     ) {
       // Navigate to inventory management page
       navigate("/inventory-management/");
+      return;
+    }else if (
+      formData.email.toLowerCase() === "employee@gmail.com" &&
+      formData.password === "employee123"
+    ) {
+      // Navigate to Employee management page
+
+      Swal.fire({
+        title: 'Hi Udantha',
+        text: 'You have successfully logged in',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        showCancelButton: false,
+        timer:4000,});
+      navigate("/employee-management/");
       return;
     }
   

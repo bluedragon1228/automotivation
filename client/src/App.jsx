@@ -39,6 +39,11 @@ import ProductPage from "./pages/inventory management/ProductPage";
 import SinglePartPage from "./pages/inventory management/SinglePartPage";
 
 import AdminDashboard from "./components/AdminDashboard/DashboardLayout";
+
+import DashboardLayoutEmp from "./pages/employee management/DashboardLayoutEmp";
+import AddEmployee from "./pages/employee management/AddEmployee";
+import ShowEmployee from "./pages/employee management/ShowEmployee";
+import UpdateEmployee from "./pages/employee management/UpdateEmployee";
 export default function App() {
   return (
     <BrowserRouter>
@@ -48,6 +53,13 @@ export default function App() {
         <Route path="/inventory-management/*" element={<DashboardLayout />} />
         <Route path="/Booking" element={<BookingPage />} />
         <Route path="/book/add/:id" element={<CreateBooking />} />
+
+        {/* employee */}
+        <Route path="/employee-management/*" element={<DashboardLayoutEmp />} />
+        <Route path="/employee/creat" element={<AddEmployee />} />
+        <Route path="/employee/show/:id" element={<ShowEmployee />} />
+        <Route path="/employee/update/:id" element={<UpdateEmployee />} />
+
 
         <Route path="/pkg" element={<ShowAllPackages />} />
 
