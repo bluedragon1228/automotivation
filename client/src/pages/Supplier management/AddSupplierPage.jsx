@@ -140,7 +140,7 @@ const AddSupplierPage = () => {
           <div className="mb-4">
             <label className="text-dark block mb-2">Contact Number</label>
             <input
-              type="text"
+              type="number"
               className="w-full p-2 border border-dark rounded"
               value={contactNo}
               onChange={(e) => setContactNo(e.target.value)}
