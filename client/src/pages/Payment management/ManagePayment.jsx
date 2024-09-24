@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { jsPDF } from 'jspdf'; // Import jsPDF
  // Ensure the path is correct
+ import UpdatePaymentPopup from './UpdatePayment'; // Ensure the path is correct
+
 
 const ManagePayment = () => {
   const [payments, setPayments] = useState([]);
@@ -268,18 +270,29 @@ const handleGeneratePDF = () => {
               <p className="mb-2">
                 <strong>Customer Email:</strong> {selectedPayment.email}
               </p>
+              <button
+                className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-gray-800"
+                onClick={() => setSelectedPayment(null)}
+              >
+                &times;
+              </button>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {showUpdatePopup && (
-        <UpdatePaymentPopup
-          payment={selectedPayment}
-          onClose={() => setShowUpdatePopup(false)}
-          onUpdate={handlePaymentUpdate}
-        />
-      )}
+      <AnimatePresence>
+        {showUpdatePopup && (
+          <UpdatePaymentPopup
+            isOpen={showUpdatePopup}
+            onClose={() => setShowUpdatePopup(false)}
+            paymentData={selectedPayment}
+            onUpdate={(updatedPayment) => {
+              handlePaymentUpdate(updatedPayment);
+            }}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
