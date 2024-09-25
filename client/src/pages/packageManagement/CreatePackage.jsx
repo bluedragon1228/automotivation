@@ -8,7 +8,7 @@ const CreatePackage = () => {
   const [pkgID, setPkgId] = useState("");
   const [pkgName, setPkgName] = useState("");
   const [pkgDes, setPkgDes] = useState("");
-  const [pkgPrice, setPkgPrice] = useState("");//add field 
+  const [pkgPrice, setPkgPrice] = useState(""); //add field
   const [pkgImg, setPkgImg] = useState(null);
   const [pkgServ, setPkgServ] = useState([
     {
@@ -123,7 +123,7 @@ const CreatePackage = () => {
 
       await axios.post("http://localhost:3000/api/maintance/add", {
         pkgID,
-        pkgName,  //add field
+        pkgName, //add field
         pkgDes,
         pkgPrice,
         imageURL: imageUrl,
@@ -171,7 +171,10 @@ const CreatePackage = () => {
               className="w-full p-2 border rounded"
               value={pkgName}
               onChange={(e) => {
-                const p = e.target.value.replace(/[^a-zA-Z\s]/g, ""); {/*add field */}
+                const p = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+                {
+                  /*add field */
+                }
                 setPkgName(p);
               }}
               required
@@ -180,7 +183,7 @@ const CreatePackage = () => {
               <span className="text-red-500 text-sm">{formErrors.pkgName}</span>
             )}
           </div>
-          
+
           <div className="mb-4">
             <label className="text-dark block mb-2">Description</label>
             <textarea
@@ -202,12 +205,17 @@ const CreatePackage = () => {
                 value={pkgPrice}
                 onChange={(e) => {
                   const value = e.target.value;
-                  // Only update if the value is a positive number
-                  if (!isNaN(value) && Number(value) >= 0) {
+
+                  // Regular expression to allow only up to 2 decimal places
+                  const isValid = /^\d*(\.\d{0,2})?$/.test(value);
+
+                  // Only update if the value is valid and a positive number
+                  if (isValid && Number(value) >= 0) {
                     setPkgPrice(value);
                   }
                 }}
                 min="0" // Prevents negative numbers
+                step="0.01" // Ensures input increments/decrements by 0.01
                 required
               />
               {formErrors.pkgPrice && (

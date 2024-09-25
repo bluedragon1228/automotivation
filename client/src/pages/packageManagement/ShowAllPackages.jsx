@@ -152,8 +152,8 @@ const ShowAllPackages = () => {
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead className="bg-DarkColor text-white">
             <tr>
-              <th className="py-3 px-5 text-left">Pkg Name</th>
-              <th className="py-3 px-5 text-left">Price</th>
+              <th className="py-3 px-5 text-left">Package Name</th>
+              <th className="py-3 px-5 text-left">Price(RS)</th>
               <th className="py-3 px-5 text-left">Services</th> {/*add field*/}
               <th className="py-3 px-5 text-left">Action</th>
             </tr>
