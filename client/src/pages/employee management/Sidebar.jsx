@@ -41,19 +41,19 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
     },
     {
       name: "Attandenc Dashboard",
-      path: "",
+      path: "/employee-management/attendence",
       icon: <FaClipboardList />,
     },
     {
       name: "Salary Dashboard",
-      path: "",
+      path: "/employee-management/salary",
       icon: <FaTags />,
     },
-    {
-      name: "Item Re-Odering",
-      path: "",
-      icon: <FaTags />,
-    },
+    // {
+    //   name: "Item Re-Odering",
+    //   path: "",
+    //   icon: <FaTags />,
+    // },
   ];
 
   return (

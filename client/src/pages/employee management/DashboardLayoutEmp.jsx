@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { Route, Routes } from "react-router-dom";
 import EmployeeDashboard from "./EmployeeDashboard";
+import AttendenceDashbord from "./AttendenceDashbord";
+import SalaryDashboard from "./SalaryDashboard";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 function DashboardLayoutEmp() {
   const [isOpen, setIsOpen] = useState(true);  // Corrected
@@ -28,6 +31,8 @@ function DashboardLayoutEmp() {
       {/* Sidebar Component */}
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
+      <Header></Header>
+
       {/* Main Content */}
       <motion.main
         className="flex-1 ml-0 transition-all"
@@ -37,6 +42,8 @@ function DashboardLayoutEmp() {
         {/* Routes for Dashboard Components */}
         <Routes>
           <Route path="/" element={<EmployeeDashboard />} />
+          <Route path="/attendence" element={<AttendenceDashbord />} />
+          <Route path="/salary" element={<SalaryDashboard />} />
         </Routes>
       </motion.main>
     </div>

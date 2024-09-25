@@ -118,7 +118,7 @@ function EmployeeDashboard() {
                     <Link to={`/employee/update/${employee._id}`}>
                       <AiOutlineEdit className='text-warning' />
                     </Link>
-                    <Link to={`/Employee/delete/${employee._id}`}>
+                    <Link to={`/employee/delete/${employee._id}`}>
                       <MdOutlineDelete className='text-danger' />
                     </Link>
                   </div>

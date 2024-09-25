@@ -137,7 +137,7 @@ const UpdateEmployee = () => {
       <div className="form-content">
 
         <div className="form-group">
-          <label className='text-xl mr-4 text-gray-500'>Employee Name</label>
+          <label className='text-xl mr-8 text-gray-500'>Employee Name</label>
           <input type="text" value={employeeName} 
             onChange={(e) =>{
               const onlyText = e.target.value.replace(/[^a-zA-Z\s]/g, '');
@@ -146,7 +146,7 @@ const UpdateEmployee = () => {
             className='border-2 border-gray-500 py-2 w-full' />
         </div>
 
-        <div className="my-4">
+        <div className="my-1">
           <label className='text-xl mr-4 text-gray-500'>Date Of Birth</label>
           <input type="date"
                 value={DOB}
@@ -223,7 +223,7 @@ const UpdateEmployee = () => {
                 className='form-input' />
         </div>
 
-        <button className='p-2 bg-sky-300 m-5' onClick={handleUpdateEmployee}>
+        <button className='p-2 bg-sky-300 m-2' onClick={handleUpdateEmployee}>
           Update Details
         </button>
 
