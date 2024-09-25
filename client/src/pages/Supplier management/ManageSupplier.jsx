@@ -96,6 +96,7 @@ const ManageSupplier = () => {
               <th className="py-3 px-4 text-left w-1/6">Supply items</th>
               <th className="py-3 px-4 text-left w-1/6">Contact number</th>
               <th className="py-3 px-4 text-left w-1/6">Email</th>
+              {/*<th className="py-3 px-4 text-left w-1/6">Age</th>*/}
               <th className="py-3 px-4 text-left w-1/6">Address</th>
               <th className="py-3 px-4 text-left w-1/6">Actions</th>
             </tr>
@@ -114,6 +115,7 @@ const ManageSupplier = () => {
                   <td className="py-2 px-4">{supplier.ItemName}</td>
                   <td className="py-2 px-4">{supplier.ContactNo}</td>
                   <td className="py-2 px-4">{supplier.Email}</td>
+                  {/*<td className="py-2 px-4">{supplier.age}</td>*/}
                   <td className="py-2 px-4">{supplier.Address}</td>
                   <td className="py-2 px-4">
                     <div className="flex items-center">
@@ -174,6 +176,7 @@ const ManageSupplier = () => {
                 <p><strong>Supplier ID:</strong> {selectedSupplier.SupplierID}</p>
                 <p><strong>Contact:</strong> {selectedSupplier.ContactNo}</p>
                 <p><strong>Email:</strong> {selectedSupplier.Email}</p>
+               {/* <p><strong>Age:</strong> {selectedSupplier.age}</p>*/}
                 <p><strong>Address:</strong> {selectedSupplier.Address}</p>
               </div>
               <button

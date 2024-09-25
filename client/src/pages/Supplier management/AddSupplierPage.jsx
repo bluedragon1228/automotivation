@@ -13,6 +13,7 @@ const AddSupplierPage = () => {
   const [address, setAddress] = useState("");
   const [items, setItems] = useState([]); // State for storing items
   const [loading, setLoading] = useState(false);
+ // const [age, setAge] = useState("");
 
   useEffect(() => {
     fetchParts();
@@ -67,6 +68,7 @@ const AddSupplierPage = () => {
         ContactNo: contactNo,
         Email: email,
         Address: address,
+        //age: age,
       });
 
       Swal.fire({
@@ -82,6 +84,8 @@ const AddSupplierPage = () => {
       setContactNo("");
       setEmail("");
       setAddress("");
+      //setAge("");
+
     } catch (error) {
       Swal.fire({
         title: "Error!",
@@ -103,14 +107,21 @@ const AddSupplierPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="text-dark block mb-2">Supplier Name</label>
-            <input
-              type="text"
-              className="w-full p-2 border border-dark rounded"
-              value={supplierName}
-              onChange={(e) => setSupplierName(e.target.value)}
-              required
-            />
+          <label className="text-dark block mb-2">Supplier Name</label>
+          <input
+      type="text"
+      className="w-full p-2 border border-dark rounded"
+      value={supplierName}
+      onChange={(e) => {
+        const value = e.target.value;
+        // Allow only letters and spaces (A-Z, a-z, and space)
+        const regex = /^[A-Za-z\s]*$/;
+        if (regex.test(value)) {
+          setSupplierName(value);
+        }
+      }}
+      required
+    />
           </div>
           <div className="mb-4">
             <label className="text-dark block mb-2">Item Name</label>
@@ -133,7 +144,7 @@ const AddSupplierPage = () => {
           <div className="mb-4">
             <label className="text-dark block mb-2">Contact Number</label>
             <input
-              type="text"
+              type="number"
               className="w-full p-2 border border-dark rounded"
               value={contactNo}
               onChange={(e) => setContactNo(e.target.value)}
@@ -152,6 +163,21 @@ const AddSupplierPage = () => {
               required
             />
           </div>
+          
+          {/* <div className="mb-4">
+            <label className="text-dark block mb-2">Age</label>
+            <input
+              type="number"
+              className="w-full p-2 border border-dark rounded"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              maxLength={3} // Set max length to 10 digits
+              required
+            />
+
+          </div> */}
+
+
           <div className="mb-4">
             <label className="text-dark block mb-2">Address</label>
             <textarea
