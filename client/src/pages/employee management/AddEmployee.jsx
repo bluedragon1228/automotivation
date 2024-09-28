@@ -196,6 +196,24 @@ const AddEmployee = () => {
     </div>
 
     <div className="form-group">
+  <label className='form-label'>Designation</label>
+  
+  <select 
+    value={Designation} 
+    onChange={(e) => setDesignation(e.target.value)} 
+    className='form-input'
+  >
+    <option value="">-- Select Designation --</option>
+    <option value="Manager">Manager</option>
+    <option value="Developer">Developer</option>
+    <option value="Designer">Designer</option>
+    <option value="Tester">Tester</option>
+  </select>
+</div>
+
+
+
+    <div className="form-group">
       <label className='form-label'>Basic Salary</label>
       <input type="number" value={BasicSalary} 
         onChange={(e) => setBasicsalary(e.target.value)}
@@ -216,7 +234,7 @@ const AddEmployee = () => {
         className='form-input' />
     </div>
 
-    <div className="form-group">
+    {/* <div className="form-group">
       <label className='form-label'>Designation</label>
       <input  
       type="text" 
@@ -225,7 +243,7 @@ const AddEmployee = () => {
         const onlyText = e.target.value.replace(/[^a-zA-Z\s]/g, '');
         setDesignation(onlyText);
       }} className='form-input' />
-    </div>
+    </div> */}
 
     <button className='form-button' onClick={handleAddEmployee}>
       Add Employee

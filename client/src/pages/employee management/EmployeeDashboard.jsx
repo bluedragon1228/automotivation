@@ -91,10 +91,10 @@ function EmployeeDashboard() {
               <th>DOB</th>
               <th>NIC</th>
               <th>Address</th>
+              <th>Designation</th>
               <th>Basic Salary</th>
               <th>Contact No</th>
               <th>Email</th>
-              <th>Designation</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -106,10 +106,10 @@ function EmployeeDashboard() {
                 <td>{employee.DOB}</td>
                 <td>{employee.NIC}</td>
                 <td>{employee.Address}</td>
+                <td>{employee.Designation}</td>
                 <td>{employee.BasicSalary}</td>
                 <td>{employee.ContactNo}</td>
                 <td>{employee.Email}</td>
-                <td>{employee.Designation}</td>
                 <td>
                   <div className='action-icons'>
                     <Link to={`/employee/show/${employee._id}`}>
