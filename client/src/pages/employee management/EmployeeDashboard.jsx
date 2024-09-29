@@ -107,7 +107,7 @@ function EmployeeDashboard() {
                 <td>{employee.NIC}</td>
                 <td>{employee.Address}</td>
                 <td>{employee.Designation}</td>
-                <td>{employee.BasicSalary}</td>
+                <td>Rs: {employee.BasicSalary}</td>
                 <td>{employee.ContactNo}</td>
                 <td>{employee.Email}</td>
                 <td>

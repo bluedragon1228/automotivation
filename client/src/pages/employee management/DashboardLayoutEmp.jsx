@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import EmployeeDashboard from "./EmployeeDashboard";
 import AttendenceDashbord from "./AttendenceDashbord";
 import SalaryDashboard from "./SalaryDashboard";
+import GenerateSalaryReport from "./GenerateSalaryReaport";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
@@ -44,6 +45,7 @@ function DashboardLayoutEmp() {
           <Route path="/" element={<EmployeeDashboard />} />
           <Route path="/attendence" element={<AttendenceDashbord />} />
           <Route path="/salary" element={<SalaryDashboard />} />
+          <Route path="/salary-report" element={<GenerateSalaryReport />} />
         </Routes>
       </motion.main>
     </div>

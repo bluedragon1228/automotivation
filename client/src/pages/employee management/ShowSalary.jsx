@@ -55,12 +55,12 @@ useEffect(() => {
 
           <div className="my-4">
             <span className='text-xl mr-4 text-gray-500'>Name</span>
-            <span>{Employee.employeeName}</span>
+            <span>{Salary.employeeName}</span>
           </div>
 
           <div className="my-4">
             <span className='text-xl mr-4 text-gray-500'>NIC</span>
-            <span>{Employee.NIC}</span>
+            <span>{Salary.NIC}</span>
           </div>
 
           <div className="my-4">

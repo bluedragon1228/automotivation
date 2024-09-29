@@ -10,6 +10,7 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { IoIosLogOut } from "react-icons/io";
+import { SaveAltSharp } from "@mui/icons-material";
 
 const sidebarVariants = {
   open: {
@@ -49,11 +50,11 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       path: "/employee-management/salary",
       icon: <FaTags />,
     },
-    // {
-    //   name: "Item Re-Odering",
-    //   path: "",
-    //   icon: <FaTags />,
-    // },
+    {
+      name: "Salary Report",
+      path: "salary-report",
+      icon: <SaveAltSharp />,
+    },
   ];
 
   return (

@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 import Spinner from "./Spinner";
 const AddEmployeeSalary = () => {
 
@@ -154,13 +155,17 @@ const AddEmployeeSalary = () => {
         }
 
         // Sequentially calculate OT hours, OT pay, and total salary
+        // calculateTotalOtHour();
+        // setTimeout(() => {
+        //     calculateTotalOTpay();
+        //     setTimeout(() => {
+        //         calculateTotalSalary();
+        //     }, 100);
+        // }, 100);
+        calculateTotalOTpay();
         calculateTotalOtHour();
-        setTimeout(() => {
-            calculateTotalOTpay();
-            setTimeout(() => {
-                calculateTotalSalary();
-            }, 100);
-        }, 100);
+        calculateTotalSalary();
+
 
         const data = {
             NIC: selectEmployee.NIC,
@@ -306,10 +311,10 @@ const AddEmployeeSalary = () => {
                     readOnly
                 />
                <button 
-  onClick={calculateTotalSalary} 
-  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-  Calculate Total Salary
-</button>
+                onClick={calculateTotalSalary} 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+                Calculate Total Salary
+                </button>
 
             </div>
             
