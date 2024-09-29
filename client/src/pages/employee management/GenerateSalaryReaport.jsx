@@ -3,6 +3,7 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import Papa from "papaparse";
 import { motion } from "framer-motion";
+import Spinner from "./Spinner";
 
 const GenerateSalaryReport = () => {
   const [salaryReportData, setSalaryReportData] = useState([]);
@@ -122,10 +123,11 @@ const GenerateSalaryReport = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Spinner/></div>;
   }
 
   return (
+    
     <div className="p-6 bg-PrimaryColor rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold text-dark mb-4">Employee Salary Report</h2>
 
