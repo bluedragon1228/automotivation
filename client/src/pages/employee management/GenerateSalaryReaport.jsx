@@ -74,7 +74,7 @@ const GenerateSalaryReport = () => {
         salary.toDate,
         salary.totalOtHours,
         `Rs:${salary.totalOtAmount.toFixed(2)}`,
-        `Rs:${salary.basicSalary}`,
+        `Rs:${salary.basicSalary.toFixed(2)}`,
         `Rs:${salary.totalSalary.toFixed(2)}`,
       ]),
       startY: 100,
@@ -101,7 +101,7 @@ const GenerateSalaryReport = () => {
         salary.toDate,
         salary.totalOtHours,
         salary.totalOtAmount.toFixed(2),
-        salary.basicSalary,
+        salary.basicSalary.toFixed(2),
         salary.totalSalary.toFixed(2),
       ]),
     ];
@@ -183,7 +183,7 @@ const GenerateSalaryReport = () => {
                   <td className="py-2 px-4">{salary.toDate}</td>
                   <td className="py-2 px-4">{salary.totalOtHours}</td>
                   <td className="py-2 px-4">Rs:{salary.totalOtAmount.toFixed(2)}</td>
-                  <td className="py-2 px-4">Rs:{salary.basicSalary}</td>
+                  <td className="py-2 px-4">Rs:{salary.basicSalary.toFixed(2)}</td>
                   <td className="py-2 px-4">Rs:{salary.totalSalary.toFixed(2)}</td>
                 </tr>
               ))}

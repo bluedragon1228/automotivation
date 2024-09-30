@@ -45,7 +45,7 @@ const AddEmployee = () => {
         // }
 
         // Validating NIC
-        const NICPatternOld = /^[0-9]{9}[vVxX]$/;  
+        const NICPatternOld = /^[0-9]{9}[vVxX]*$/i;  
         const NICPatternNew = /^[0-9]{12}$/;       
 
           if (!NICPatternOld.test(NIC) && !NICPatternNew.test(NIC)) {
@@ -73,6 +73,7 @@ const AddEmployee = () => {
         if (!contactNumberPattern.test(ContactNo)) {
           Swal.fire({
             icon: 'error',
+            type:"number",
             title: 'Oops...',
             text: 'Contact Number should be in the format XXXXXXXXXX.',
             });
@@ -182,9 +183,11 @@ const AddEmployee = () => {
 </div>
 
     <div className="form-group">
-      <label className='form-label'>NIC</label>
-      <input type="text" value={NIC} 
+      <label className='form-label'>NIC Number</label>
+      <input type="text" 
+        value={NIC} 
         onChange={(e) => setNIC(e.target.value)}
+        maxLength={12}
         className='form-input' />
     </div>
 
@@ -222,7 +225,7 @@ const AddEmployee = () => {
 
     <div className="form-group">
       <label className='form-label'>Contact Number</label>
-      <input type="text" value={ContactNo} 
+      <input type="number" value={ContactNo} 
         onChange={(e) => setContactNo(e.target.value)}
         className='form-input' />
     </div>
