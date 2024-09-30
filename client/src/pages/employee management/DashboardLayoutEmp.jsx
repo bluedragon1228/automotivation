@@ -6,6 +6,7 @@ import EmployeeDashboard from "./EmployeeDashboard";
 import AttendenceDashbord from "./AttendenceDashbord";
 import SalaryDashboard from "./SalaryDashboard";
 import GenerateSalaryReport from "./GenerateSalaryReaport";
+import DeleteEmployeeDashboard from "./DeleteEmployeeDashboard";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
@@ -46,6 +47,7 @@ function DashboardLayoutEmp() {
           <Route path="/attendence" element={<AttendenceDashbord />} />
           <Route path="/salary" element={<SalaryDashboard />} />
           <Route path="/salary-report" element={<GenerateSalaryReport />} />
+          <Route path="/delete-employee" element={<DeleteEmployeeDashboard />} />
         </Routes>
       </motion.main>
     </div>

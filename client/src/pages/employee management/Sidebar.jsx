@@ -10,7 +10,7 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { IoIosLogOut } from "react-icons/io";
-import { SaveAltSharp } from "@mui/icons-material";
+import { Delete, SaveAltSharp } from "@mui/icons-material";
 
 const sidebarVariants = {
   open: {
@@ -55,7 +55,14 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       path: "salary-report",
       icon: <SaveAltSharp />,
     },
+    {
+      name: "Delete Employee",
+      path: "delete-employee",
+      icon: <Delete />,
+    },
   ];
+
+  
 
   return (
     <motion.aside

@@ -207,10 +207,13 @@ const AddEmployee = () => {
     className='form-input'
   >
     <option value="">-- Select Designation --</option>
-    <option value="Manager">Manager</option>
-    <option value="Developer">Developer</option>
-    <option value="Designer">Designer</option>
-    <option value="Tester">Tester</option>
+    <option value="Diesel mechanic">Diesel mechanic</option>
+    <option value="Automotive mechanic">Automotive mechanic</option>
+    <option value="Auto body mechanics">Auto body mechanics</option>
+    <option value="Service technicians">Service technicians</option>
+    <option value="Auto glass mechanics">Auto glass mechanics</option>
+    <option value="Tire mechanics">Tire mechanics</option>
+    {/* <option value="Tester">Tester</option> */}
   </select>
 </div>
 
