@@ -51,7 +51,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       icon: <FaTags />,
     },
     {
-      name: "Salary Report",
+      name: "Download Report",
       path: "salary-report",
       icon: <SaveAltSharp />,
     },
